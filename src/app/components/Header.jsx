@@ -6,7 +6,7 @@ export default function Header() {
     <div className="relative h-screen">
       <div className="absolute inset-0">
         <Image 
-          src="/images/lagos-aerial.jpg"
+          src="/images/lagos-bg.jpg"
           alt="Lagos State Aerial View"
           className="w-full h-full object-cover"
           fill

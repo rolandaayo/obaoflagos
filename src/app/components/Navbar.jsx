@@ -23,10 +23,13 @@ export default function Navbar() {
                 History
               </Link>
               <Link href="/pages/gallery" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md">
-                Gallery
+                Tour
               </Link>
               <Link href="/pages/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md">
-                Contact
+                Events
+              </Link>
+              <Link href="/pages/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md">
+                Biography
               </Link>
             </div>
           </div>

@@ -1,60 +1,47 @@
+import Footer from '@/app/components/Footer'
+import Navbar from '@/app/components/Navbar'
 import React from 'react'
-import Image from 'next/image'
 
 export default function page() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-center mb-12 text-[#C4A962]">Our History</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-[#1B1B1B]">The Legacy of Oba of Lagos</h2>
-            <p className="text-gray-700 leading-relaxed">
-              The institution of the Oba of Lagos dates back to the 17th century when Lagos was established as a major port city. The Oba has traditionally been the paramount ruler of Lagos, serving as both a spiritual and cultural leader for the people.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Throughout history, the Oba has played a crucial role in preserving the rich cultural heritage of Lagos, maintaining traditional customs, and fostering unity among the diverse communities within the city.
-            </p>
-          </div>
-          
-          <div className="relative h-[400px]">
-            <Image
-              src="/images/oba-palace.jpg"
-              alt="Oba of Lagos Palace"
-              fill
-              className="object-cover rounded-lg shadow-xl"
-            />
-          </div>
-        </div>
+    <div>
+      <Navbar/>
+      <div className="max-w-4xl mx-auto px-4 py-40">
+        <h1 className="text-3xl font-bold mb-6">Detailed Account of Oba Ado: The Founding Monarch of Lagos</h1>
 
-        <div className="mt-16 space-y-8">
-          <h2 className="text-2xl font-semibold text-[#1B1B1B]">Timeline of Notable Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3">17th Century</h3>
-              <p className="text-gray-700">Establishment of the Oba institution in Lagos</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3">19th Century</h3>
-              <p className="text-gray-700">Period of significant growth and development in Lagos</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3">Present Day</h3>
-              <p className="text-gray-700">Continuing the legacy of cultural leadership and tradition</p>
-            </div>
-          </div>
-        </div>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Early Life and Background</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Oba Ado, historically recognized as the first Oba of Lagos, was a pivotal figure in the establishment of the Lagos monarchy. He was one of the children of the Oba of Benin and is believed to have migrated from the Benin Kingdom to the Lagos area in the early 17th century. His journey was part of the broader expansion of Benin's influence along the coastal regions of present-day Nigeria.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Ado's migration to Lagos (then known as Eko) was strategic, aligning with the Benin Kingdom's aspirations to establish a foothold in the area for trade and administrative purposes. The area was already inhabited by the Awori people, who were led by local chiefs but lacked centralized governance.
+          </p>
+        </section>
 
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold text-[#1B1B1B] mb-8">Cultural Significance</h2>
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <p className="text-gray-700 leading-relaxed">
-              The Oba of Lagos continues to be a symbol of unity, tradition, and cultural preservation. The palace serves as a center for traditional ceremonies, cultural celebrations, and community gatherings, maintaining the connection between Lagos's past and present.
-            </p>
-          </div>
-        </div>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Founding of the Lagos Monarchy</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Upon arriving in Lagos, Ado was installed as a leader under the authority of the Oba of Benin. This marked the beginning of the Lagos monarchy. He is credited with introducing the structure and customs of Benin governance, which became the foundation of Lagos' political and cultural framework.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Ado's leadership style helped unite the Awori communities and fostered stability. He successfully navigated local politics and established himself as the central authority figure. His reign signified the transition of Lagos from a collection of loosely governed settlements to a cohesive entity with centralized leadership.
+          </p>
+        </section>
+
+        <div>
+          Establishing Trade and Diplomacy
+            Oba Ado recognized the strategic importance of Lagos as a coastal settlement with immense trade potential. During his reign:
+            1.	Maritime Trade: Ado laid the groundwork for Lagos to become a hub for maritime trade. Although large-scale transatlantic trade had not yet peaked, he positioned Lagos as a key point for commerce with neighboring regions and the interior.
+            2.	Diplomatic Relations: His ability to balance relationships with the Benin Kingdom and the local Awori people was crucial in maintaining peace and promoting economic activities.
+
+            Cultural Legacy
+            Ado introduced Benin cultural and administrative practices that influenced Lagos' traditions. Key contributions included:
+            1.	Chieftaincy Institutions: He established the chieftaincy system, which continues to play a significant role in Lagos' governance.
+            2.	Eko as the Name for Lagos: The name "Eko," still commonly used by Lagosians, is attributed to the Benin influence during Ados reign. It reflects the deep cultural ties between Lagos and the Benin Kingdom.
+            3.	Foundation of Royal Customs: Ado initiated ceremonies and practices that would become integral to the Lagos monarchy, ensuring continuity in traditional governance.</div>
       </div>
+      <Footer/>
     </div>
   )
 }

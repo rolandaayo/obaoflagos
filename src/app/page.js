@@ -9,7 +9,7 @@ export default function page() {
     <div>
       <Navbar/>
       <Header/>
-      <Body/>
+      {/* <Body/> */}
       <Footer/>
     </div>
   )

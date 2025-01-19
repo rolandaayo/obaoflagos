@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 
 export default function Navbar() {
@@ -5,13 +6,13 @@ export default function Navbar() {
     <>
       <nav className='bg-white shadow-md fixed w-full top-0 z-50'>
         <div className='container mx-auto px-4 py-3 flex justify-between items-center'>
-          <div className='text-2xl font-bold text-green-700'>
+          <div className='text-2xl font-bold text-green-700 cursor-pointer' onClick={() => window.location.href = '/'}>
             OBA OF LAGOS
           </div>
           <div className='hidden items-center font-bold md:flex space-x-6'>
-            <a href='#' className='text-gray-700 hover:text-green-700'>The King</a>
-            <a href='#' className='text-gray-700 hover:text-green-700'>About</a>
-            <a href='#' className='text-gray-700 hover:text-green-700'>Services</a>
+            <a href='/pages/about' className='text-gray-700 hover:text-green-700'>About</a>
+            <a href='#' className='text-gray-700 hover:text-green-700'>History</a>
+            {/* <a href='#' className='text-gray-700 hover:text-green-700'>Biography</a> */}
             <a href='#' className='text-gray-700 hover:text-green-700'>Contact</a>
                       <button className="bg-black p-2 rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">

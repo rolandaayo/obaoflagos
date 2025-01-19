@@ -6,14 +6,14 @@ export default function page() {
   return (
     <div>
       <Navbar/>
-      <div className="min-h-screen pt-36 bg-black text-white py-16">
+      <div className="min-h-screen pt-36 bg-white/90 text-black py-16">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-green-400 via-white to-green-500 bg-clip-text text-transparent mb-6">About Us</h2>
-              <h3 className="text-lg text-white leading-relaxed">
+              <h2 className="text-md font-bold text-black mb-6">About Us</h2>
+              <h3 className="text-lg leading-relaxed">
                 Welcome to The Legacy of Lagos – your ultimate resource for exploring the rich history, cultural heritage, and leadership lineage of the Obas of Lagos. Our mission is to preserve and share the profound legacy of Lagos's royal history, connecting the past to the present for enthusiasts, researchers, and future generations.
               </h3>
             </div>
@@ -34,13 +34,13 @@ export default function page() {
                 className="w-full h-full object-cover"
               />
             </div><div className="space-y-6">
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-green-400 via-white to-green-500 bg-clip-text text-transparent mb-6">Our Vision</h2>
-              <h3 className="text-lg text-white leading-relaxed">
+              <h2 className="text-md font-bold mb-6">Our Vision</h2>
+              <h3 className="text-lg  leading-relaxed">
                 Welcome to The Legacy of Lagos – your ultimate resource for exploring the rich history, cultural heritage, and leadership lineage of the Obas of Lagos. Our mission is to preserve and share the profound legacy of Lagos's royal history, connecting the past to the present for enthusiasts, researchers, and future generations.
               </h3>
 
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-green-400 via-white to-green-500 bg-clip-text text-transparent mb-6">First Oba of Lagos( Oba Ado)</h2>
-              <h3 className="text-lg text-white leading-relaxed">
+              <h2 className="text-2xl font-bold mb-6">First Oba of Lagos( Oba Ado)</h2>
+              <h3 className="text-lg leading-relaxed">
                 Welcome to The Legacy of Lagos – your ultimate resource for exploring the rich history, cultural heritage, and leadership lineage of the Obas of Lagos. Our mission is to preserve and share the profound legacy of Lagos's royal history, connecting the past to the present for enthusiasts, researchers, and future generations.
               </h3>
             </div>

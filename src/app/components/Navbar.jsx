@@ -11,9 +11,9 @@ export default function Navbar() {
           </div>
           <div className='hidden items-center font-bold md:flex space-x-6'>
             <a href='/pages/about' className='text-gray-700 hover:text-green-700'>About</a>
-            <a href='#' className='text-gray-700 hover:text-green-700'>History</a>
+            <a href='/pages/history' className='text-gray-700 hover:text-green-700'>History</a>
             {/* <a href='#' className='text-gray-700 hover:text-green-700'>Biography</a> */}
-            <a href='#' className='text-gray-700 hover:text-green-700'>Contact</a>
+            <a href='/pages/contact' className='text-gray-700 hover:text-green-700'>Contact</a>
                       <button className="bg-black p-2 rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

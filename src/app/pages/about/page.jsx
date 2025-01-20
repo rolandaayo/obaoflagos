@@ -6,7 +6,7 @@ export default function page() {
   return (
     <div>
       <Navbar/>
-      <div className="min-h-screen pt-36 bg-white/90 text-black py-16">
+      <div className="min-h-screen pt-36 bg-white/95 text-black py-16">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -50,7 +50,7 @@ export default function page() {
         </div>
 
       </div>
-          <div className="mt-20 px-4 text-center sm:px-6 lg:px-8">
+          {/* <div className="mt-20 px-4 text-center sm:px-6 lg:px-8">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-green-400 via-white to-green-500 bg-clip-text text-transparent mb-10">Meet the Obas</h2>
             <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-lg mb-6">List of the Obas of Lagos and their tenure dates, beginning from time immemorial:</p>
@@ -78,7 +78,8 @@ export default function page() {
                 <li className="text-white"><span className="font-semibold">Rilwan Babatunde Osuolale Aremu Akiolu I (2003–Present)</span> – The current Oba of Lagos.</li>
               </ul>
             </div>
-          </div>      <Footer/>
+          </div>      */}
+           <Footer/>
     </div>
   )
 }

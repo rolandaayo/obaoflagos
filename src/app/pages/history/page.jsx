@@ -32,8 +32,8 @@ export default function page() {
         <div>
           Establishing Trade and Diplomacy
             Oba Ado recognized the strategic importance of Lagos as a coastal settlement with immense trade potential. During his reign:
-            1.	Maritime Trade: Ado laid the groundwork for Lagos to become a hub for maritime trade. Although large-scale transatlantic trade had not yet peaked, he positioned Lagos as a key point for commerce with neighboring regions and the interior.
-            2.	Diplomatic Relations: His ability to balance relationships with the Benin Kingdom and the local Awori people was crucial in maintaining peace and promoting economic activities.
+            Maritime Trade: Ado laid the groundwork for Lagos to become a hub for maritime trade. Although large-scale transatlantic trade had not yet peaked, he positioned Lagos as a key point for commerce with neighboring regions and the interior.
+            Diplomatic Relations: His ability to balance relationships with the Benin Kingdom and the local Awori people was crucial in maintaining peace and promoting economic activities.
 
             Cultural Legacy
             Ado introduced Benin cultural and administrative practices that influenced Lagos' traditions. Key contributions included:

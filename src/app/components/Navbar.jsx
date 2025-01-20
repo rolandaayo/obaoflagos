@@ -30,9 +30,10 @@ export default function Navbar() {
         </div>
         <div className='container mx-aut font-bold px-4 py-8 hidden md:block border-t'>
           <ul className='flex space-x-8 text-sm text-gray-600'>
-            <li><a href='#' className='hover:text-green-700'>Oba Adeniji Adele (1949-1964)</a></li>
-            <li><a href='#' className='hover:text-green-700'>Oba Adeyinka Oyekan II (1965-2003)</a></li>
-            <li><a href='#' className='hover:text-green-700'>Oba Rilwan Akiolu I (2003-Present)</a></li>
+            <li><a href='/pages/1600-1700' className='hover:text-green-700'>Oba Ado (1600-1700)</a></li>
+            <li><a href='/pages/1701-1800' className='hover:text-green-700'>Oba Akin Semoyin (1701-1800)</a></li>
+            <li><a href='/pages/1801-1900' className='hover:text-green-700'>Oba Adele Ajosun (1801-1900)</a></li>
+            <li><a href='/pages/1901-2000' className='hover:text-green-700'>Oba Oyekan I (1901-2000)</a></li>
           </ul>
         </div>
       </nav>

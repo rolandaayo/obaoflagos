@@ -1,7 +1,18 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Navbar() {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [showSearch, setShowSearch] = useState(false)
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      e.preventDefault()
+      const searchUrl = `/search?q=${encodeURIComponent(searchQuery.trim())}`
+      window.location.href = searchUrl
+    }
+  }
+
   return (
     <>
       <nav className='bg-white shadow-md fixed w-full top-0 z-50'>
@@ -14,13 +25,29 @@ export default function Navbar() {
             <a href='/pages/theking' className='text-gray-700 hover:text-green-700'>Oba Akiolu</a>
             <a href='/pages/history' className='text-gray-700 hover:text-green-700'>History</a>
             <a href='/pages/blog' className='text-gray-700 hover:text-green-700'>Blog</a>
-            {/* <a href='#' className='text-gray-700 hover:text-green-700'>Biography</a> */}
             <a href='/pages/contact' className='text-gray-700 hover:text-green-700'>Contact</a>
-                      <button className="bg-black p-2 rounded-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                      </button>
+            <div className="relative">
+              <button 
+                className="bg-black p-2 rounded-full"
+                onClick={() => setShowSearch(!showSearch)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+              {showSearch && (
+                <div className="absolute right-0 mt-2 w-64">
+                  <input
+                    type="text"
+                    className="w-full p-2 border rounded-md shadow-lg"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={handleSearch}
+                  />
+                </div>
+              )}
+            </div>
           </div>
           <div className='md:hidden'>
             <button className='text-gray-700'>
@@ -51,12 +78,12 @@ export default function Navbar() {
                 <a href='/pages/1801-1900-ajosun' className='hover:text-green-700'>Oba Adele Ajosun (1801-1900)</a>
                 <ul className='absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-80 z-50'>
                   <li><a href='/pages/1821-1829-oshinlokun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Oshinlokun (1821–1829)</a></li>
-                  <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Idewu Ojulari (1829–1834)</a></li>
-                  <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba 	Adele Ajosun (Restored, 1835–1837)</a></li>
-                  <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Oluwole (1837–1841)</a></li>
-                  <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Akitoye (1841–1845)</a></li>
-                  <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Kosoko (1845–1851)</a></li>
-                  <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Akitoye (Restored, 1851–1853)</a></li>
+                  <li><a href='/pages/1829-1834-idowu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Idewu Ojulari (1829–1834)</a></li>
+                  <li><a href='/pages/1835-1837-adele' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba 	Adele Ajosun (Restored, 1835–1837)</a></li>
+                  <li><a href='/pages/1837-1841-oluwole' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Oluwole (1837–1841)</a></li>
+                  <li><a href='/pages/1841-1845-akitoye' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Akitoye (1841–1845)</a></li>
+                  <li><a href='/pages/1845-1851-kosoko' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Kosoko (1845–1851)</a></li>
+                  <li><a href='/pages/1851-1853-akitoye-restored' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Akitoye (Restored, 1851–1853)</a></li>
                   <li><a href='#' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Dosunmu (1853–1885)</a></li>
                 </ul>
               </li>

@@ -8,7 +8,7 @@ export default function page() {
     {
       title: "Traditional Yoruba Wedding Ceremonies: A Royal Perspective",
       date: "March 15, 2024",
-      image: "/blog/wedding.jpg",
+      image: "/images/yoruba-wedding.jpg",
       author: "His Royal Majesty",
       category: "Traditions",
       excerpt: "Discover the rich cultural heritage and beautiful traditions of Yoruba wedding ceremonies, from the engagement ceremony (Idana) to the grand reception. Learn about the significance of each ritual and how the palace preserves these sacred traditions..."
@@ -16,7 +16,7 @@ export default function page() {
     {
       title: "The Sacred History of the Oba's Crown: A Symbol of Authority",
       date: "March 10, 2024",
-      image: "/blog/crown.jpg",
+      image: "/images/obas-crown.jpg",
       author: "Palace Historian",
       category: "Royal Heritage",
       excerpt: "Explore the symbolic significance and historical importance of the sacred crown worn by the Oba of Lagos. Dating back centuries, this royal artifact represents the spiritual and cultural authority bestowed upon the throne..."
@@ -24,7 +24,7 @@ export default function page() {
     {
       title: "Lagos Cultural Festivals: Preserving Our Heritage",
       date: "March 5, 2024",
-      image: "/blog/festival.jpg",
+      image: "/images/Eyo-Festival.jpg",
       author: "Cultural Affairs Office",
       category: "Events",
       excerpt: "Experience the vibrant celebrations and festivals that make Lagos a cultural powerhouse. From the Eyo Festival to the annual Oba's Palace celebrations, discover how these events unite our community..."
@@ -32,7 +32,7 @@ export default function page() {
     {
       title: "The Role of the Oba in Modern Lagos",
       date: "February 28, 2024",
-      image: "/blog/modern-lagos.jpg",
+      image: "/images/role-of-oba.jpg",
       author: "Palace Secretary",
       category: "Governance",
       excerpt: "Understanding the vital role of traditional leadership in contemporary Lagos society. How the palace bridges the gap between ancient wisdom and modern governance..."
@@ -40,7 +40,7 @@ export default function page() {
     {
       title: "Palace Architecture: A Testament to Yoruba Craftsmanship",
       date: "February 20, 2024",
-      image: "/blog/palace.jpg",
+      image: "/images/palace.jpeg",
       author: "Royal Architect",
       category: "Architecture",
       excerpt: "Delve into the architectural marvel that is the Oba's Palace. Each carving, column, and courtyard tells a story of our people's artistic excellence..."
@@ -48,7 +48,7 @@ export default function page() {
     {
       title: "Royal Customs and Court Etiquette",
       date: "February 15, 2024",
-      image: "/blog/customs.jpg",
+      image: "/images/customs.jpg",
       author: "Chief Protocol Officer",
       category: "Protocol",
       excerpt: "Learn about the proper protocols and customs observed in the royal court. From greetings to ceremonies, these traditions maintain the dignity of the throne..."
@@ -61,10 +61,10 @@ export default function page() {
     <div className="min-h-screen pt-10 bg-white text-black bg-cream-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary-800 mb-4">
+          <h1 className="text-4xl md:text-6xl text-green-700 font-bold text-primary-800 mb-4">
             Royal Chronicles: The Oba's Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-green-700 max-w-3xl mx-auto">
             Insights and wisdom from the Palace of the Oba of Lagos, preserving our heritage for future generations
           </p>
         </div>
@@ -92,13 +92,7 @@ export default function page() {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <Image
-                    src="/avatars/author.jpg"
-                    alt={post.author}
-                    width={24}
-                    height={24}
-                    className="rounded-full"
-                  />
+                  
                   <span className="ml-2 text-sm text-gray-600">{post.author}</span>
                   <span className="mx-2 text-gray-400">•</span>
                   <span className="text-sm text-gray-500">{post.date}</span>

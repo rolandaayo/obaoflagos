@@ -11,6 +11,7 @@ export default function Navbar() {
           </div>
           <div className='hidden items-center font-bold md:flex space-x-6'>
             <a href='/pages/about' className='text-gray-700 hover:text-green-700'>About</a>
+            <a href='/pages/theking' className='text-gray-700 hover:text-green-700'>Oba Akiolu</a>
             <a href='/pages/history' className='text-gray-700 hover:text-green-700'>History</a>
             <a href='/pages/blog' className='text-gray-700 hover:text-green-700'>Blog</a>
             {/* <a href='#' className='text-gray-700 hover:text-green-700'>Biography</a> */}

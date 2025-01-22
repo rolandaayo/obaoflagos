@@ -7,7 +7,7 @@ export default function page() {
       <div className="min-h-screen pt-16 bg-gradient-to-b from-gray-50 to-gray-100">
         <Navbar/>
         <div className="max-w-6xl mx-auto px-4 py-12 prose prose-lg">
-          <h1 className="text-5xl font-bold text-gray-900 mb-12 text-center leading-tight tracking-tight">Oba Rilwan Babatunde Osuolale Aremu Akiolu I: The Visionary Custodian of Lagos' Heritage</h1>
+          <h1 className="text-5xl font-bold text-green-700 mb-12 text-center leading-tight tracking-tight">Oba Rilwan Babatunde Osuolale Aremu Akiolu I: The Visionary Custodian of Lagos' Heritage</h1>
  
           <section className="mb-12 bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6 border-b pb-4">Early Life and Royal Lineage</h2>

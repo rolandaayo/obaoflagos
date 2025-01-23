@@ -6,7 +6,7 @@ export default function page() {
     return (
       <div>
         <Navbar />
-        <div className="min-h-screen bg-white/95 text-black">
+        <div className="min-h-screen pt-12 bg-white/95 text-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             {/* Hero Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
@@ -131,6 +131,35 @@ export default function page() {
                     <img src="/images/modern-lagos.jpg" alt="Modern Lagos" className="w-full h-[400px] object-cover"/>
                   </div>
                 </div>
+
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <h2 className="text-3xl font-bold text-green-700 mb-6">Meet the Obas</h2>
+                  <h3 className="text-xl text-gray-700 mb-8">List of the Obas of Lagos and their tenure dates, beginning from time immemorial:</h3>
+                  <ul className="space-y-4">
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Ado (1630–1669)</span><span className="mx-2">–</span><span className="text-gray-700">The first Oba of Lagos, a son of the Oba of Benin.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Gabaro (1669–1704)</span><span className="mx-2">–</span><span className="text-gray-700">Known for his administrative innovations.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Akinsemoyin (1704–1749)</span><span className="mx-2">–</span><span className="text-gray-700">Played a significant role in the growth of trade in Lagos.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Eletu Kekere (1749–1775)</span><span className="mx-2">–</span><span className="text-gray-700">Ruled during a period of consolidation.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Ologun Kutere (1775–1801)</span><span className="mx-2">–</span><span className="text-gray-700">Renowned for expanding Lagos's influence.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Adele Ajosun (1801–1821)</span><span className="mx-2">–</span><span className="text-gray-700">Ruled amidst internal and external political challenges.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Oshinlokun (1821–1829)</span><span className="mx-2">–</span><span className="text-gray-700">Known for his leadership during turbulent times.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Idewu Ojulari (1829–1834)</span><span className="mx-2">–</span><span className="text-gray-700">His reign was marked by controversies leading to his abdication.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Adele Ajosun (Restored, 1835–1837)</span><span className="mx-2">–</span><span className="text-gray-700">Returned for a brief second tenure.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Oluwole (1837–1841)</span><span className="mx-2">–</span><span className="text-gray-700">A period of relative stability.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Akitoye (1841–1845)</span><span className="mx-2">–</span><span className="text-gray-700">Known for his resistance to the slave trade.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Kosoko (1845–1851)</span><span className="mx-2">–</span><span className="text-gray-700">A rival claimant with strong influence and connections.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Akitoye (Restored, 1851–1853)</span><span className="mx-2">–</span><span className="text-gray-700">Returned to power with British support.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Dosunmu (1853–1885)</span><span className="mx-2">–</span><span className="text-gray-700">Signed the Lagos Treaty of Cession in 1861.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Oyekan I (1885–1900)</span><span className="mx-2">–</span><span className="text-gray-700">Oversaw Lagos during early British colonial administration.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Eshugbayi Eleko (1901–1925)</span><span className="mx-2">–</span><span className="text-gray-700">Advocated for Lagosians' interests against colonial policies.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Ibikunle Akitoye (1925–1928)</span><span className="mx-2">–</span><span className="text-gray-700">Had a brief reign.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Eshugbayi Eleko (Restored, 1931–1932)</span><span className="mx-2">–</span><span className="text-gray-700">Returned for a short second tenure.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Adeniji Adele II (1949–1964)</span><span className="mx-2">–</span><span className="text-gray-700">Played a significant role in Lagos's cultural development.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Adekola Oyekan II (1965–2003)</span><span className="mx-2">–</span><span className="text-gray-700">The longest-reigning Oba of Lagos.</span></li>
+                  <li className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"><span className="font-semibold text-green-800">Rilwan Babatunde Osuolale Aremu Akiolu I (2003–Present)</span><span className="mx-2">–</span><span className="text-gray-700">The current Oba of Lagos.</span></li>
+                 </ul>
+                </div>
+
               </div>
             </div>
           </div>

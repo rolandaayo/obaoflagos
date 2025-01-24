@@ -27,7 +27,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${cinzel.variable} ${playfair.variable} antialiased`}
+
+        className={`${poppins.variable} ${cinzel.variable} ${playfair.variable} antialiased bg-white`}
       >
         <LanguageProvider>{children}</LanguageProvider>
       </body>

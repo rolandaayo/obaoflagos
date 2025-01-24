@@ -47,13 +47,13 @@ export default function Header() {
   };
 
   return (
-    <div className="bg-white/95 pt-28 shadow-md py-4 relative">
+    <div className="bg-white/95 pt-0 md:pt-28 shadow-md py-4 relative">
       <div className="pb-12">
 
-         <h1 className="text-4xl text-center  md:text-5xl font-bold mb-6 text-green-800">
+         <h1 className="text-5xl text-center md:text-5xl font-bold mb-6 text-green-800">
             {t("THE LEGACY OF LAGOS")}
           </h1>
-          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">
+          <p className="md:text-xl text-center text-gray-600 max-w-3xl mx-auto">
             {t("discoverRichHistory")}
           </p>
       </div>

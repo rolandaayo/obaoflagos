@@ -19,7 +19,7 @@ export default function Body() {
       <div className="mx-auto max-w-7xl px-4 md:px-8 flex flex-col space-y-12">
         {/* Hero Section */}
         { <MotionSection
-          className="text-center mb-16"
+          className="text-center bg-green-100 p-12 mb-16"
           initial={fadeInUp.initial}
           animate={fadeInUp.animate}
           transition={fadeInUp.transition}

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
+import Image from "next/image";
 
 export default function Header() {
   const { t } = useLanguage();
@@ -58,11 +59,16 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="h-full relative"
             >
-              <img
-                src={slides[currentSlide].image}
-                alt={slides[currentSlide].title}
-                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src={slides[currentSlide].image}
+                  alt={slides[currentSlide].title}
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                />
+              </div>
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

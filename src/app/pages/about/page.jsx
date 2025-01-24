@@ -50,7 +50,7 @@ export default function Page() {
             >
               <div className="relative w-full h-[500px]">
                 <Image
-                  src="/images/oba-akiolu2.jpg"
+                  src="/images/yoruba.png"
                   alt="Traditional Palace of the Oba of Lagos"
                   fill
                   className="object-cover"

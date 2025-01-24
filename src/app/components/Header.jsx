@@ -10,7 +10,7 @@ export default function Header() {
 
   const slides = [
     {
-      image: "/images/oba-akiolu.jpg",
+      image: "/images/oba-akiolu-3.png",
       title: "About The King",
       link: "/pages/theking",
     },

@@ -10,7 +10,7 @@ export default function Page() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-[poppins]">
       <Navbar />
       <main>
         <Header />

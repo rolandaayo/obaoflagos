@@ -1,27 +1,114 @@
-import React from 'react'
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Header() {
+  const { t } = useLanguage();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: "/images/oba-akiolu.jpg",
+      title: "About The King",
+      link: "/pages/theking",
+    },
+    {
+      image: "/images/eyo-festival.jpg",
+      title: "Welcome to the legacy of Lagos",
+      link: "#",
+    },
+    {
+      image: "/images/Oba-Akiolu1.jpg",
+      title: "Preserving the Past, Inspiring the Future",
+      link: "#",
+    },
+    {
+      image: "/images/cultural.jpg",
+      title: "Cultural Heritage Unveiled",
+      link: "#",
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
-    <div className='bg-white/95 pt-24 shadow-md py-4'>
-        <div className="h-[60vh] mx-4 md:mr-96 md:ml-20 flex flex-col">
-            <img src="/images/oba-akiolu.jpg" alt="Oba Akiolu" className="h-full w-full object-cover"/>
-            <a href='/pages/theking' className="mt-4 text-md cursor-pointer font-bold text-black hover:underline">About The King</a>
-        </div> 
+    <div className="bg-white/95 pt-24 shadow-md py-4 relative">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="h-[60vh] relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="h-full relative"
+            >
+              <img
+                src={slides[currentSlide].image}
+                alt={slides[currentSlide].title}
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="absolute bottom-0 left-0 right-0 bg-black/50 p-4"
+              >
+                <a
+                  href={slides[currentSlide].link}
+                  className="text-lg font-bold text-white hover:text-green-400 transition-colors duration-300"
+                >
+                  {slides[currentSlide].title}
+                </a>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
 
-        <div className="h-[60vh] pt-36 mx-4 md:mr-96 md:ml-20 flex flex-col">
-            <img src="/images/eyo-festival.jpg" alt="Oba Akiolu" className="h-full w-full object-cover"/>
-            <h1 className="mt-4 text-md cursor-pointer font-bold text-black hover:underline">Welcome to the legacy of Lagos</h1>
-        </div>    
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-colors duration-300"
+          >
+            ←
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-colors duration-300"
+          >
+            →
+          </button>
 
-        <div className="h-[60vh] pt-36 mx-4 md:mr-96 md:ml-20 flex flex-col">
-            <img src="/images/Oba-Akiolu1.jpg" alt="Oba Akiolu" className="h-full w-full object-cover"/>
-            <h1 className="mt-4 text-md cursor-pointer font-bold text-black hover:underline">Preserving the Past, Inspiring the Future</h1>
-        </div>  
-
-        <div className="h-[60vh] pt-36 mx-4 md:mr-96 md:ml-20 flex flex-col">
-            <img src="/images/cultural.jpg" alt="Oba Akiolu" className="h-full w-full object-cover"/>
-            <h1 className="mt-4 text-md cursor-pointer font-bold text-black hover:underline">Cultural Heritage Unveiled</h1>
-        </div>      
+          {/* Slide Indicators */}
+          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                  currentSlide === index
+                    ? "bg-white"
+                    : "bg-white/50 hover:bg-white/75"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

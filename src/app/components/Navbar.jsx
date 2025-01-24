@@ -1,127 +1,259 @@
-"use client"
-import React, { useState } from 'react'
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [showSearch, setShowSearch] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSearch = (e) => {
-    if (e.key === 'Enter' && searchQuery.trim()) {
-      e.preventDefault()
-      const searchUrl = `/search?q=${encodeURIComponent(searchQuery.trim())}`
-      window.location.href = searchUrl
+    if (e.key === "Enter" && searchQuery.trim()) {
+      e.preventDefault();
+      const searchUrl = `/search?q=${encodeURIComponent(searchQuery.trim())}`;
+      window.location.href = searchUrl;
     }
-  }
+  };
 
   return (
     <>
-      <nav className='bg-white shadow-md fixed w-full top-0 z-50'>
-        <div className='container mx-auto px-4 py-3 flex justify-between items-center'>
-          <div className='text-2xl font-bold text-green-700 cursor-pointer' onClick={() => window.location.href = '/'}>
-            OBA OF LAGOS
-          </div>
-          <div className='hidden items-center font-bold md:flex space-x-6'>
-            <a href='/pages/about' className='text-gray-700 hover:text-green-700'>About</a>
-            <a href='/pages/theking' className='text-gray-700 hover:text-green-700'>Oba Akiolu</a>
-                      <div className='relative group'>
-                        <a href='#' className='text-gray-700 hover:text-green-700'>History</a>
-                        <ul className='absolute hidden group-hover:block bg-white text-black shadow-lg rounded-md py-2 w-48 z-50'>
-                          <li><a href='/pages/1600-1700-ado' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1600-1700)</a></li>
-                          <li><a href='/pages/1701-1800-semoyin' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1701-1800)</a></li>
-                          <li><a href='/pages/1801-1900/ajosun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1801-1900)</a></li>
-                          <li><a href='/pages/history/modern' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1901-2000)</a></li>
-                        </ul>
-                      </div>
-            <a href='/pages/blog' className='text-gray-700 hover:text-green-700'>Blog</a>
-            <a href='/pages/contact' className='text-gray-700 hover:text-green-700'>Contact</a>
-            <div className="relative">
-              <button 
-                className="bg-black p-2 rounded-full"
-                onClick={() => setShowSearch(!showSearch)}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-              {showSearch && (
-                <div className="absolute right-0 mt-2 w-64">
-                  <input
-                    type="text"
-                    className="w-full p-2 border rounded-md shadow-lg"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyPress={handleSearch}
-                  />
+      <motion.nav
+        // initial={{ y: -100 }}
+        // animate={{ y: 0 }}
+        className={`bg-white fixed w-full top-0 z-50 transition-all duration-300 ${
+          scrolled ? "shadow-lg" : "shadow-md"
+        }`}
+      >
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex justify-between items-center">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-2xl font-bold text-green-700 cursor-pointer"
+              onClick={() => (window.location.href = "/")}
+            >
+              OBA OF LAGOS
+            </motion.div>
+            <div className="hidden md:flex items-center space-x-8">
+              <NavLink href="/pages/gallery">{t("Gallery")}</NavLink>
+              <NavLink href="/pages/about">{t("about")}</NavLink>
+              <NavLink href="/pages/theking">{t("obaAkiolu")}</NavLink>
+              <div className="relative group">
+                <NavLink href="#">{t("history")}</NavLink>
+                <div className="absolute hidden group-hover:block w-48 bg-white shadow-xl rounded-lg py-2 mt-2 transition-all duration-300">
+                  <DropdownLink href="/pages/1600-1700-ado">
+                    Year (1600-1700)
+                  </DropdownLink>
+                  <DropdownLink href="/pages/1701-1800-semoyin">
+                    Year (1701-1800)
+                  </DropdownLink>
+                  <DropdownLink href="/pages/1801-1900/ajosun">
+                    Year (1801-1900)
+                  </DropdownLink>
+                  <DropdownLink href="/pages/history/modern">
+                    Year (1901-2000)
+                  </DropdownLink>
                 </div>
-              )}
+              </div>
+              <NavLink href="/pages/blog">{t("blog")}</NavLink>
+              <NavLink href="/pages/contact">{t("contact")}</NavLink>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={toggleLanguage}
+                className="px-3 py-1 rounded-full bg-green-700 text-white hover:bg-green-800 transition-colors duration-300"
+              >
+                {language === "english" ? "YO" : "EN"}
+              </motion.button>
+              <div className="relative">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-green-700 p-2 rounded-full hover:bg-green-800 transition-colors duration-300"
+                  onClick={() => setShowSearch(!showSearch)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="white"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </motion.button>
+                {showSearch && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute right-0 mt-2 w-64"
+                  >
+                    <input
+                      type="text"
+                      className="w-full p-2 border rounded-md shadow-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      placeholder="Search..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyPress={handleSearch}
+                    />
+                  </motion.div>
+                )}
+              </div>
             </div>
-          </div>
-          <div className='md:hidden'>
-            <button className='text-gray-700'>
-              <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              className="md:hidden text-green-700"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
-            </button>
+            </motion.button>
           </div>
         </div>
-        <div className='container mx-auto font-bold px-4 py-8 hidden md:block border-t overflow-visible'>
-          <div className='animate-scroll whitespace-nowrap'>
-            <ul className='inline-flex space-x-8 text-sm text-gray-600'>
-              <li className='relative group'>
-                <a href='/pages/1600-1700-ado' className='hover:text-green-700'>Oba Ado (1600-1700)</a>
-                <ul className='absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 z-50'>
-                  <li><a href='/pages/1600-gabaro' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Gabaro (1669–1704)</a></li>
-                  
+
+        {/* Scrolling Sub Navigation */}
+        <div className="container mx-auto px-4 py-4 block border-t overflow-hidden">
+          <div className="animate-scroll whitespace-nowrap">
+            <ul className="inline-flex space-x-4 md:space-x-8 text-xs md:text-sm text-gray-600">
+              <li className="relative group">
+                <motion.a
+                  href="/pages/1600-1700-ado"
+                  className="hover:text-green-700 font-medium whitespace-nowrap"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {t("foundingMonarch")} (1600-1700)
+                </motion.a>
+                <ul className="absolute hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-48 z-50">
+                  <li>
+                    <DropdownLink href="/pages/1600-gabaro">
+                      Oba Gabaro (1669–1704)
+                    </DropdownLink>
+                  </li>
                 </ul>
               </li>
-              <li className='relative group'>
-                <a href='/pages/1701-1800-semoyin' className='hover:text-green-700'>Oba Akin Semoyin (1701-1800)</a>
-                <ul className='absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-60 z-50'>
-                  <li><a href='/pages/1749-1775-eletu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Eletu Kekere (1749–1775)</a></li>
-                  <li><a href='/pages/1775-1801-ologun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Ologun Kutere (1775–1801)</a></li>
+
+              <li className="relative group">
+                <motion.a
+                  href="/pages/1701-1800-semoyin"
+                  className="hover:text-green-700 font-medium whitespace-nowrap"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Oba Akin Semoyin (1701-1800)
+                </motion.a>
+                <ul className="absolute hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-60 z-50">
+                  <li>
+                    <DropdownLink href="/pages/1749-1775-eletu">
+                      Oba Eletu Kekere (1749–1775)
+                    </DropdownLink>
+                  </li>
+                  <li>
+                    <DropdownLink href="/pages/1775-1801-ologun">
+                      Oba Ologun Kutere (1775–1801)
+                    </DropdownLink>
+                  </li>
                 </ul>
               </li>
-              <li className='relative group'>
-                <a href='/pages/1801-1900-ajosun' className='hover:text-green-700'>Oba Adele Ajosun (1801-1900)</a>
-                <ul className='absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-80 z-50'>
-                  <li><a href='/pages/1821-1829-oshinlokun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Oshinlokun (1821–1829)</a></li>
-                  <li><a href='/pages/1829-1834-idewu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Idewu Ojulari (1829–1834)</a></li>
-                  <li><a href='/pages/1835-1837-adele' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba 	Adele Ajosun (Restored, 1835–1837)</a></li>
-                  <li><a href='/pages/1837-1841-oluwole' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Oluwole (1837–1841)</a></li>
-                  <li><a href='/pages/1841-1845-akitoye' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Akitoye (1841–1845)</a></li>
-                  <li><a href='/pages/1845-1851-kosoko' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Kosoko (1845–1851)</a></li>
-                  <li><a href='/pages/1851-1853-akitoye-restored' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Akitoye (Restored, 1851–1853)</a></li>
-                  <li><a href='/pages/1853-1885-dosunmu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Dosunmu (1853–1885)</a></li>
+
+              <li className="relative group">
+                <motion.a
+                  href="/pages/1801-1900-ajosun"
+                  className="hover:text-green-700 font-medium whitespace-nowrap"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Oba Adele Ajosun (1801-1900)
+                </motion.a>
+                <ul className="absolute hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-80 z-50">
+                  <li>
+                    <DropdownLink href="/pages/1801-1900/ajosun">
+                      Oba Adele Ajosun (1801-1900)
+                    </DropdownLink>
+                  </li>
                 </ul>
               </li>
-              <li className='relative group'>
-                <a href='/pages/1901-2000-oyekan' className='hover:text-green-700'>Oba Oyekan I (1901-2000)</a>
-                <ul className='absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-70 z-50'>
-                  <li><a href='/pages/1901-1925-eleko' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Eshugbayi Eleko (1901–1925)</a></li>
-                  <li><a href='/pages/1925-1928-ibikunle' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Ibikunle Akitoye (1925–1928)</a></li>
-                  <li><a href='1931-1932-eleko-restored' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Eshugbayi Eleko (Restored, 1931–1932)</a></li>
-                  <li><a href='/pages/1949-1964-adele' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Adeniji Adele II (1949–1964)</a></li>
-                  <li><a href='/pages/1965-2003-oyekan' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba	Adekola Oyekan II (1965–2003)</a></li>
+
+              <li className="relative group">
+                <motion.a
+                  href="/pages/1901-2000-oyekan"
+                  className="hover:text-green-700 font-medium whitespace-nowrap"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Oba Oyekan I (1901-2000)
+                </motion.a>
+                <ul className="absolute hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-70 z-50">
+                  <li>
+                    <DropdownLink href="/pages/1901-2000-oyekan">
+                      Oba Oyekan I (1901-2000)
+                    </DropdownLink>
+                  </li>
                 </ul>
               </li>
-            </ul>          </div>
+            </ul>
+          </div>
         </div>
-      </nav>
-      <div className='h-24'></div>
+      </motion.nav>
+      <div className="h-24"></div>
       <style jsx>{`
         @keyframes scroll {
           0% {
-            transform: translateX(0)
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%)
+            transform: translateX(-50%);
           }
         }
         .animate-scroll {
-          animation: scroll 20s linear infinite
+          animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </>
-  )
+  );
 }
+
+// Helper Components
+const NavLink = ({ href, children }) => (
+  <motion.a
+    href={href}
+    className="text-gray-700 hover:text-green-700 font-semibold transition-colors duration-300"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    {children}
+  </motion.a>
+);
+
+const DropdownLink = ({ href, children }) => (
+  <motion.a
+    href={href}
+    className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-300"
+    whileHover={{ x: 5 }}
+  >
+    {children}
+  </motion.a>
+);

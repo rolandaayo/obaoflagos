@@ -15,7 +15,7 @@ export default function Header() {
       link: "/pages/theking",
     },
     {
-      image: "/images/eyo-festival.jpg",
+      image: "/images/Eyo-Festival.jpg",
       title: "Welcome to the legacy of Lagos",
       link: "#",
     },

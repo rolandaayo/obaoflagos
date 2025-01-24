@@ -10,22 +10,22 @@ export default function Header() {
 
   const slides = [
     {
-      image: "./images/oba-akiolu.jpg",
+      image: "/images/oba-akiolu.jpg",
       title: "About The King",
       link: "/pages/theking",
     },
     {
-      image: "./images/eyo-festival.jpg",
+      image: "/images/eyo-festival.jpg",
       title: "Welcome to the legacy of Lagos",
       link: "#",
     },
     {
-      image: "./images/Oba-Akiolu1.jpg",
+      image: "/images/Oba-Akiolu1.jpg",
       title: "Preserving the Past, Inspiring the Future",
       link: "#",
     },
     {
-      image: "./images/cultural.jpg",
+      image: "/images/cultural.jpg",
       title: "Cultural Heritage Unveiled",
       link: "#",
     },

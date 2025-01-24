@@ -158,38 +158,30 @@ export default function Body() {
             {t("What Awaits You")}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
               {/* <div className="text-3xl mb-4">📜</div> */}
               <h3 className="font-bold mb-2 text-gray-800">
                 {t("Journey Through Royal History")}
               </h3>
-
               <p className="text-gray-600">{t("Experience the captivating stories of Lagos's monarchs, from Ado, the first Oba of Lagos, to the modern leadership of Oba Rilwan Akiolu I. Uncover the milestones, traditions, and legacies that have defined each reign.")}</p>
             </div>
-
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
               {/* <div className="text-3xl mb-4">📷</div> */}
               <h3 className="font-bold mb-2 text-gray-800">
                 {t("Interactive Experiences")}
               </h3>
-
               <p className="text-gray-600">{t("Immerse yourself in the vibrant customs, regalia, and ceremonies of Lagos's monarchy. Learn how these traditions have kept the city's spirit alive across generations.")}</p>
             </div>
-
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
               {/* <div className="text-3xl mb-4">💡</div> */}
               <h3 className="font-bold mb-2 text-gray-800">{t("Interactive Experiences")}</h3>
-
               <p className="text-gray-600">{t("Explore an interactive timeline, historical galleries, and rare archival content that bring the legacy of Lagos's royalty to life.")}</p>
             </div>
-
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
               {/* <div className="text-3xl mb-4">💡</div> */}
               <h3 className="font-bold mb-2 text-gray-800">{t("Connect with Royalty")}</h3>
               <p className="text-gray-600">{t("Discover how the monarchy continues to inspire unity and progress in modern Lagos, blending traditional values with contemporary significance.")}</p>
             </div>
-
           </div>        </MotionSection>
       </div>
     </div>

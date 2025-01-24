@@ -50,7 +50,7 @@ export default function Header() {
     <div className="bg-white/95 pt-28 shadow-md py-4 relative">
       <div className="pb-12">
 
-         <h1 className="text-4xl text-center md:text-5xl font-bold mb-6 text-green-800">
+         <h1 className="text-4xl text-center  md:text-5xl font-bold mb-6 text-green-800">
             {t("THE LEGACY OF LAGOS")}
           </h1>
           <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">

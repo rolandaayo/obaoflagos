@@ -18,7 +18,7 @@ export default function Body() {
     <div className="bg-gradient-to-b from-white to-gray-50 pb-20 text-black pt-24 shadow-md">
       <div className="mx-auto max-w-7xl px-4 md:px-8 flex flex-col space-y-12">
         {/* Hero Section */}
-        <MotionSection
+        {/* <MotionSection
           className="text-center mb-16"
           initial={fadeInUp.initial}
           animate={fadeInUp.animate}
@@ -30,7 +30,7 @@ export default function Body() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t("discoverRichHistory")}
           </p>
-        </MotionSection>
+        </MotionSection> */}
 
         {/* Main Content Sections */}
         <div className="grid md:grid-cols-2 gap-12">
@@ -62,7 +62,7 @@ export default function Body() {
               </h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              {t("obasMoreThanJustTraditionalLeaders")}
+              {t("The Obas of Lagos are more than just traditional leaders; they represent a bridge between the past and the future. By preserving their stories, we honor the resilience and diversity of Lagosians and celebrate the city’s pivotal role in Africa's cultural and economic landscape.")}
             </p>
           </MotionSection>
 
@@ -90,11 +90,11 @@ export default function Body() {
                 </svg>
               </div>
               <h2 className="text-2xl font-bold text-blue-800">
-                {t("exploreLearn")}
+                {t("Explore, Learn, Celebrate")}
               </h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              {t("whetherYoureHistoryEnthusiast")}
+              {t("Whether you’re a history enthusiast, cultural explorer, or a proud Lagosian, this platform invites you to dive deep into the heart of Lagos’s royal heritage. Let the stories of courage, wisdom, and unity inspire you.")}
             </p>
           </MotionSection>
         </div>
@@ -115,19 +115,19 @@ export default function Body() {
               <h3 className="font-bold mb-2 text-gray-800">
                 {t("exploreTimeline")}
               </h3>
-              <p className="text-gray-600">{t("beginYourJourney")}</p>
+              <p className="text-gray-600">{t("Begin your journey with a detailed exploration of the Obas and their reigns.")}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="text-3xl mb-4">📷</div>
               <h3 className="font-bold mb-2 text-gray-800">
-                {t("viewOurGallery")}
+                {t("View Our Gallery")}
               </h3>
-              <p className="text-gray-600">{t("stepBackInTime")}</p>
+              <p className="text-gray-600">{t("Step back in time through rare photos, artifacts, and memorabilia.")}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="text-3xl mb-4">💡</div>
               <h3 className="font-bold mb-2 text-gray-800">{t("learnMore")}</h3>
-              <p className="text-gray-600">{t("diveDeeper")}</p>
+              <p className="text-gray-600">{t("Dive deeper into the fascinating world of Lagos's monarchy.")}</p>
             </div>
           </div>
         </MotionSection>
@@ -140,9 +140,9 @@ export default function Body() {
           transition={{ ...fadeInUp.transition, delay: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-4">
-            {t("joinRoyalExperience")}
+            {t("Join the Royal Experience")}
           </h2>
-          <p className="text-lg mb-8 text-green-100">{t("stayConnected")}</p>
+          <p className="text-lg mb-8 text-green-100">{t("Stay connected with us for updates, new discoveries, and opportunities to participate in preserving Lagos's royal heritage. Sign up and follow us on social media to be part of this exciting journey.")}</p>
           <button className="bg-white text-green-800 px-8 py-3 rounded-full font-bold hover:bg-green-100 transition-colors duration-300">
             {t("signUpNow")}
           </button>
@@ -155,25 +155,14 @@ export default function Body() {
           animate={fadeInUp.animate}
           transition={{ ...fadeInUp.transition, delay: 0.6 }}
         >
-          <h2 className="text-2xl font-bold mb-6 text-green-800">
-            {t("culturalSignificance")}
+          <h2 className="text-2xl text-center font-bold mb-6 text-green-800">
+            {t("Preserving the Past, Inspiring the Future")}
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="gap-8">
             <div>
-              <h3 className="font-bold text-xl mb-3 text-gray-800">
-                {t("traditionalCeremonies")}
+              <h3 className=" text-center mb-3 text-gray-800">
+                {t("The Obas of Lagos have stood as enduring figures of leadership, from the founding of Lagos in the 17th century to its rise as a global metropolis. Our platform is your gateway to exploring this remarkable lineage and understanding the role of these royal leaders in shaping Lagos's identity and resilience.")}
               </h3>
-              <p className="text-gray-700 mb-4">
-                {t("learnAboutSacredCeremonies")}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-xl mb-3 text-gray-800">
-                {t("modernInfluence")}
-              </h3>
-              <p className="text-gray-700 mb-4">
-                {t("discoverHowInstitution")}
-              </p>
             </div>
           </div>
         </MotionSection>

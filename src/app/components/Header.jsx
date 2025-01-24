@@ -47,10 +47,21 @@ export default function Header() {
   };
 
   return (
-    <div className="bg-white/95 pt-24 shadow-md py-4 relative">
+    <div className="bg-white/95 pt-14 shadow-md py-4 relative">
+      <div className="pb-12">
+
+         <h1 className="text-4xl text-center md:text-5xl font-bold mb-6 text-green-800">
+            {t("THE LEGACY OF LAGOS")}
+          </h1>
+          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">
+            {t("discoverRichHistory")}
+          </p>
+      </div>
       <div className="mx-auto max-w-7xl px-4 md:px-8">
+        
         <div className="h-[60vh] relative">
           <AnimatePresence mode="wait">
+            
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0 }}

@@ -44,7 +44,7 @@ export default function Navbar() {
               OBA OF LAGOS
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">
-              <NavLink href="/pages/gallery">{t("Gallery")}</NavLink>
+              {/* <NavLink href="/pages/gallery">{t("Gallery")}</NavLink> */}
               <NavLink href="/pages/about">{t("about")}</NavLink>
               <NavLink href="/pages/theking">{t("obaAkiolu")}</NavLink>
               <div className="relative group">

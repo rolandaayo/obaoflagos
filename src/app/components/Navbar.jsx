@@ -15,12 +15,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='bg-white shadow-md fixed w-full top-0 z-50'>
+      <nav className='bg-white font-[poppins] shadow-md fixed w-full top-0 z-50'>
         <div className='container mx-auto px-4 py-3 flex justify-between items-center'>
           <div className='text-2xl font-bold text-green-700 cursor-pointer' onClick={() => window.location.href = '/'}>
             OBA OF LAGOS
           </div>
-          <div className='hidden items-center font-bold md:flex space-x-6'>
+          <div className='hidden items-center font-semibold md:flex space-x-6'>
             <a href='/pages/about' className='text-gray-700 hover:text-green-700'>About</a>
             <a href='/pages/theking' className='text-gray-700 hover:text-green-700'>Oba Akiolu</a>
                       <div className='relative group'>

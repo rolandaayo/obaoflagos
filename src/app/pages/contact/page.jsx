@@ -7,7 +7,7 @@ export default function page() {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen pt-8 bg-white/95 text-black">
+    <div className="min-h-screen font-[poppins] pt-8 bg-white/95 text-black">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-12">Contact the Palace</h1>
         

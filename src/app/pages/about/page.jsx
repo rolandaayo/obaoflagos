@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
+import Image from "next/image";
 
 export default function Page() {
   const { t } = useLanguage();
@@ -47,11 +48,15 @@ export default function Page() {
               className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300"
               whileHover={{ y: -5 }}
             >
-              <img
-                src="/images/oba-akiolu2.jpg"
-                alt="Traditional Palace of the Oba of Lagos"
-                className="w-full h-[500px] object-cover"
-              />
+              <div className="relative w-full h-[500px]">
+                <Image
+                  src="/images/oba-akiolu2.jpg"
+                  alt="Traditional Palace of the Oba of Lagos"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </motion.div>
           </MotionSection>
 
@@ -66,11 +71,15 @@ export default function Page() {
               className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 order-2 md:order-1"
               whileHover={{ y: -5 }}
             >
-              <img
-                src="/images/about-2.jpg"
-                alt="Cultural ceremonies at the Palace"
-                className="w-full h-[500px] object-cover"
-              />
+              <div className="relative w-full h-[500px]">
+                <Image
+                  src="/images/about-2.jpg"
+                  alt="Cultural ceremonies at the Palace"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </motion.div>
             <div className="space-y-8 order-1 md:order-2">
               <h2 className="text-3xl text-green-700 font-bold">
@@ -132,22 +141,30 @@ export default function Page() {
                   </ul>
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                  <img
-                    src="/images/about-1.jpg"
-                    alt="Royal Timeline"
-                    className="w-full h-[400px] object-cover"
-                  />
+                  <div className="relative w-full h-[400px]">
+                    <Image
+                      src="/images/about-1.jpg"
+                      alt="Royal Timeline"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* Historical Insights */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 order-2 md:order-1">
-                  <img
-                    src="/images/oba-akiolu3.jpg"
-                    alt="Historical Lagos"
-                    className="w-full h-[400px] object-cover"
-                  />
+                  <div className="relative w-full h-[400px]">
+                    <Image
+                      src="/images/oba-akiolu3.jpg"
+                      alt="Historical Lagos"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
                 <div className="space-y-6 order-1 md:order-2">
                   <h3 className="text-2xl font-bold text-green-700">

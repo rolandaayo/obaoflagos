@@ -20,16 +20,65 @@ export default function Navbar() {
           <div className='text-2xl font-bold text-green-700 cursor-pointer' onClick={() => window.location.href = '/'}>
             OBA OF LAGOS
           </div>
+          
           <div className='hidden items-center font-semibold md:flex space-x-6'>
             <a href='/pages/about' className='text-gray-700 hover:text-green-700'>About</a>
             <a href='/pages/theking' className='text-gray-700 hover:text-green-700'>Oba Akiolu</a>
                       <div className='relative group'>
                         <a href='#' className='text-gray-700 hover:text-green-700'>History</a>
                         <ul className='absolute hidden group-hover:block bg-white text-black shadow-lg rounded-md py-2 w-48 z-50'>
-                          <li><a href='/pages/1600-1700-ado' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1600-1700)</a></li>
-                          <li><a href='/pages/1701-1800-semoyin' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1701-1800)</a></li>
-                          <li><a href='/pages/1801-1900/ajosun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1801-1900)</a></li>
-                          <li><a href='/pages/history/modern' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Year (1901-2000)</a></li>
+                          <li className='relative group/nested'>
+                            <a href='/pages/1600-1700-ado' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                              Year (1600-1700)
+                              <span>▶</span>
+                            </a>
+                            <ul className='absolute hidden group-hover/nested:block bg-white shadow-lg rounded-md py-2 w-48 left-full top-0'>
+                              <li><a href='/pages/1600-1700-ado' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Ado</a></li>
+                              <li><a href='/pages/1600-gabaro' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Gabaro </a></li>
+                            </ul>
+                          </li>
+                          <li className='relative group/nested'>
+                            <a href='/pages/1701-1800-semoyin' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                              Year (1701-1800)
+                              <span>▶</span>
+                            </a>
+                            <ul className='absolute hidden group-hover/nested:block bg-white shadow-lg rounded-md py-2 w-48 left-full top-0'>
+                              <li><a href='/pages/1701-1800-semoyin' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Akinsemoyin </a></li>
+                              <li><a href='/pages/1749-1775-eletu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Eletu Kekere </a></li>
+                              <li><a href='/pages/1775-1801-ologun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Ologun Kutere </a></li>
+                            </ul>
+                          </li>
+                          <li className='relative group/nested'>
+                            <a href='/pages/1801-1900/ajosun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                              Year (1801-1900)
+                              <span>▶</span>
+                            </a>
+                            <ul className='absolute hidden group-hover/nested:block bg-white shadow-lg rounded-md py-2 w-48 left-full top-0'>
+                              <li><a href='/pages/1801-1900-ajosun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Adele Ajosun </a></li>
+                              <li><a href='/pages/1821-1829-oshinlokun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Oshinlokun </a></li>
+                              <li><a href='/pages/1829-1834-idowu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Idewu Ojulari </a></li>
+                              <li><a href='/pages/1835-1837-adele' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Adele Ajosun </a></li>
+                              <li><a href='/pages/1837-1841-oluwole' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Oluwole </a></li>
+                              <li><a href='/pages/1841-1845-akitoye' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Akitoye </a></li>
+                              <li><a href='/pages/1845-1851-kosoko' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Kosoko</a></li>
+                              <li><a href='/pages/1851-1853-akitoye-restored' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Akitoye (Restored) </a></li>
+                              <li><a href='/pages/1853-1885-dosunmu' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Dosunmu</a></li>
+                            </ul>
+                          </li>
+                          <li className='relative group/nested'>
+                            <a href='/pages/history/modern' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                              Year (1901-2000)
+                              <span>▶</span>
+                            </a>
+                            <ul className='absolute hidden group-hover/nested:block bg-white shadow-lg rounded-md py-2 w-48 left-full top-0'>
+                              <li><a href='/pages/1901-2000-oyekan' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Oyekan I </a></li>
+                              <li><a href='/pages/1901-1925-eleko' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Eshugbayi Eleko </a></li>
+                              <li><a href='/pages/1925-1928-ibikunle' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Ibikunle Akitoye </a></li>
+                              <li><a href='/pages/1931-1932-eleko-restored' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Eshugbayi Eleko (Restored)</a></li>
+                              <li><a href='/pages/1949-1964-adele' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Adeniji Adele II </a></li>
+                              <li><a href='/pages/1965-2003-oyekan' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700'>Oba Adekola Oyekan II </a></li>
+                            </ul>
+                          </li>
                         </ul>
                       </div>
             <a href='/pages/blog' className='text-gray-700 hover:text-green-700'>Blog</a>
@@ -65,8 +114,8 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-        <div className='container mx-auto hover:pause pl-72 font-bold px-4 py-8 hidden md:block border-t overflow-visible'>
-          <div className='animate-scroll whitespace-nowrap'>
+        <div className='w-full bg-green-100 hover:pause font-bold py-8 hidden md:block border-t overflow-visible'>
+          <div className='container mx-auto pl-72 animate-scroll whitespace-nowrap'>
             <ul className='inline-flex space-x-8 text-sm text-gray-600'>
               <li className='relative group'>
                 <a href='/pages/1600-1700-ado' className='hover:text-green-700'>Oba Ado (1600-1700)</a>

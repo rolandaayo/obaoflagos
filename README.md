@@ -1,7 +1,9 @@
 <div align="center">
-  <h2 align="center">Billy K Homes</h2>
 
-  "Billy K Homes" – A Simple Banking Application <br/> Built using Next.js and TailwindCSS.
+  <h2 align="center">Obaoflagos</h2>
+
+
+  "Obaoflagos" – The Official Website for the Oba of Lagos <br/> Built using Next.js and TailwindCSS.
 
   <a href="#"><strong>➥ Live Demo</strong></a>
 
@@ -19,22 +21,26 @@ Before you begin, ensure you have met the following requirements:
 
 * [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-### Installing Billy K Homes
 
-To install **Billy K Homes**, run this command on your git bash:
+### Installing Obaoflagos
+
+
+To install **Obaoflagos**, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
 
-sudo git clone https://github.com/rolandaayo/billykhomes/.git
+
+sudo git clone https://github.com/rolandaayo/Obaoflagos/.git
 ```
 
 Windows:
 
 ```bash
 
-git clone https://github.com/rolandaayo/billykhomes/.git
+
+git clone https://github.com/rolandaayo/Obaoflagos/.git
 ```
 
 ## 💬 Contact

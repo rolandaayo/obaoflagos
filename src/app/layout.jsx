@@ -20,7 +20,7 @@ const cinzel = Cinzel({
 
 export const metadata = {
   title: "Nigerias Royalty",
-  description: "A comprehensive guide to Nigeria's Obas and Royalty.",
+  description: "A comprehensive guide to Nigeria's Monarchs and Royalty.",
 };
 
 export default function RootLayout({ children }) {

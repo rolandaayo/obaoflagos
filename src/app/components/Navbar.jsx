@@ -1,9 +1,11 @@
 "use client"
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 
 export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('')
   const [showSearch, setShowSearch] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   const handleSearch = (e) => {
     if (e.key === 'Enter' && searchQuery.trim()) {
@@ -12,6 +14,14 @@ export default function Navbar() {
       window.location.href = searchUrl
     }
   }
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setMobileOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [setMobileOpen])
 
   return (
     <>
@@ -28,7 +38,7 @@ export default function Navbar() {
                         <a href='#' className='text-gray-700 hover:text-green-700'>History</a>
                         <ul className='absolute hidden group-hover:block bg-white text-black shadow-lg rounded-md py-2 w-48 z-50'>
                           <li className='relative group/nested'>
-                            <a href='/pages/1600-1700-ado' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                            <a href='/pages/1600-1700-ado' className='px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
                               Year (1600-1700)
                               <span>▶</span>
                             </a>
@@ -38,7 +48,7 @@ export default function Navbar() {
                             </ul>
                           </li>
                           <li className='relative group/nested'>
-                            <a href='/pages/1701-1800-semoyin' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                            <a href='/pages/1701-1800-semoyin' className='px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
                               Year (1701-1800)
                               <span>▶</span>
                             </a>
@@ -49,7 +59,7 @@ export default function Navbar() {
                             </ul>
                           </li>
                           <li className='relative group/nested'>
-                            <a href='/pages/1801-1900/ajosun' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                            <a href='/pages/1801-1900/ajosun' className='px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
                               Year (1801-1900)
                               <span>▶</span>
                             </a>
@@ -66,7 +76,7 @@ export default function Navbar() {
                             </ul>
                           </li>
                           <li className='relative group/nested'>
-                            <a href='/pages/history/modern' className='block px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
+                            <a href='/pages/history/modern' className='px-4 py-2 hover:bg-green-50 hover:text-green-700 flex justify-between items-center'>
                               Year (1901-2000)
                               <span>▶</span>
                             </a>
@@ -82,6 +92,7 @@ export default function Navbar() {
                         </ul>
                       </div>
             <a href='/pages/blog' className='text-gray-700 hover:text-green-700'>Blog</a>
+            <a href='/pages/diaspora' className='text-gray-700 hover:text-green-700'>Diaspora</a>
             <a href='/pages/contact' className='text-gray-700 hover:text-green-700'>Contact</a>
             <div className="relative">
               <button 
@@ -107,9 +118,18 @@ export default function Navbar() {
             </div>
           </div>
           <div className='md:hidden'>
-            <button className='text-gray-700'>
+            <button
+              className='text-gray-700 p-2'
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
               <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
+                {mobileOpen ? (
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
+                ) : (
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
+                )}
               </svg>
             </button>
           </div>
@@ -158,6 +178,38 @@ export default function Navbar() {
             </div>
         </div>
       </nav>
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className='md:hidden bg-white shadow-md fixed top-16 left-0 right-0 z-40'>
+          <div className='container mx-auto px-4 py-4'>
+            <ul className='space-y-3'>
+              <li><a href='/pages/about' className='block text-gray-700 hover:text-green-700' onClick={() => setMobileOpen(false)}>About</a></li>
+              <li><a href='/pages/theking' className='block text-gray-700 hover:text-green-700' onClick={() => setMobileOpen(false)}>Oba Akiolu</a></li>
+              <li><a href='/pages/history' className='block text-gray-700 hover:text-green-700' onClick={() => setMobileOpen(false)}>History</a></li>
+              <li><a href='/pages/blog' className='block text-gray-700 hover:text-green-700' onClick={() => setMobileOpen(false)}>Blog</a></li>
+              <li><a href='/pages/diaspora' className='block text-gray-700 hover:text-green-700' onClick={() => setMobileOpen(false)}>Diaspora</a></li>
+              <li><a href='/pages/contact' className='block text-gray-700 hover:text-green-700' onClick={() => setMobileOpen(false)}>Contact</a></li>
+              <li>
+                <button className='bg-black text-white px-3 py-2 rounded' onClick={() => setShowSearch(!showSearch)}>
+                  {showSearch ? 'Close Search' : 'Open Search'}
+                </button>
+                {showSearch && (
+                  <div className='mt-2'>
+                    <input
+                      type='text'
+                      className='w-full p-2 border rounded-md'
+                      placeholder='Search...'
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyPress={handleSearch}
+                    />
+                  </div>
+                )}
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
       <div className='h-24'></div>
       <style jsx>{`
         @keyframes scroll {
